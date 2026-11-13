@@ -1712,14 +1712,15 @@ function noise(t0,dur,vol,freq){var c=AC,n=Math.floor(c.sampleRate*dur),b=c.crea
 function sfx(k){
   if(!S.settings.sound)return;var c=actx();if(!c)return;
   try{
-    if(k==='tap'){tone(820,260,0,0.075,0.11,'sine');tone(1600,900,0,0.025,0.025,'sine')}
+    var fitS=typeof isFitFace==='function'&&isFitFace();
+    if(k==='tap'){if(fitS)tone(700,1400,0,0.06,0.08,'sine');else tone(300,520,0,0.08,0.13,'sine')}
     else if(k==='coin'){tone(1318,0,0,0.18,0.07,'triangle');tone(1760,0,0.07,0.32,0.06,'triangle');noise(0,0.02,0.08,5000)}
     else if(k==='capsule'){[0,0.09,0.17,0.28].forEach(function(t,i){noise(t,0.04,0.2-i*0.03,1200+i*300)});tone(320,900,0.95,0.09,0.08);[880,1108,1318].forEach(function(f,i){tone(f,0,1.15+i*0.08,0.35,0.045,'sine')})}
-    else if(k==='food'){tone(700,240,0,0.07,0.1,'sine');tone(620,940,0.08,0.12,0.06,'sine')}
+    else if(k==='food'){if(fitS){tone(700,1400,0,0.06,0.08,'sine');tone(900,1800,0.08,0.06,0.07,'sine')}else{tone(300,520,0,0.08,0.13,'sine');tone(380,700,0.09,0.09,0.11,'sine')}}
     else if(k==='debt'){tone(233,175,0,0.45,0.07,'sine')}
-    else if(k==='page'){tone(560,200,0,0.09,0.09,'sine');tone(760,300,0.07,0.08,0.06,'sine')}
+    else if(k==='page'){if(fitS){tone(700,1400,0,0.06,0.07,'sine');tone(900,1800,0.08,0.06,0.06,'sine')}else{tone(300,520,0,0.08,0.12,'sine');tone(380,700,0.09,0.09,0.1,'sine')}}
     else if(k==='sun'){[523,659,784,1046].forEach(function(f,i){tone(f,0,i*0.07,0.35,0.045,'sine')})}
-    else if(k==='tapcard'){tone(900,320,0,0.06,0.08,'sine')}
+    else if(k==='tapcard'){tone(300,520,0,0.08,0.12,'sine')}
     else if(k==='pay'){tone(1950,0,0,0.09,0.06,'sine');tone(1950,0,0.13,0.16,0.06,'sine')}
     else if(k==='paycredit'){tone(1950,0,0,0.09,0.06,'sine');tone(1460,0,0.13,0.22,0.06,'sine')}
     else if(k==='decline'){tone(330,0,0,0.16,0.07,'square');tone(250,0,0.2,0.3,0.07,'square')}
