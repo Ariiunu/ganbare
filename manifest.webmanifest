@@ -1,0 +1,55 @@
+{
+ "name": "Ganbaru",
+ "short_name": "Ganbaru",
+ "description": "Un banco donde tu esfuerzo es la moneda y tus gustos son lo que compras.",
+ "lang": "es-CL",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#F7F6FB",
+ "theme_color": "#5B4BDB",
+ "icons": [
+  {
+   "src": "icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "Ganbare Fit",
+   "short_name": "Fit",
+   "url": "./#fit",
+   "icons": [
+    {
+     "src": "icons/fit-96.png",
+     "sizes": "96x96",
+     "type": "image/png"
+    }
+   ]
+  },
+  {
+   "name": "Tienda",
+   "url": "./#tienda",
+   "icons": [
+    {
+     "src": "icons/icon-192.png",
+     "sizes": "192x192",
+     "type": "image/png"
+    }
+   ]
+  }
+ ]
+}
